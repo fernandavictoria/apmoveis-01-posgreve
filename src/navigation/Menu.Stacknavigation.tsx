@@ -17,8 +17,8 @@ export function MenuStack() {
         animationEnabled: true,
         gestureEnabled: true
     }}>
-        <Stack.Screen name="Slide1" component={ScreenSlide1 />}
-        <Stack.Screen name="Slide2" component={ScreenSlide2 />}
+        <Stack.Screen name="Slide1" component={ScreenSlide1 }/>
+        <Stack.Screen name="Slide2" component={ScreenSlide2 }/>
 
     </Stack.Navigator>
     );
