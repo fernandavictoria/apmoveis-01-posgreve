@@ -40,7 +40,19 @@ return(
                 autoCapitalize='none'
                 onChangeText={(i) => handleChange({email: i})}
                 />
-            </View>
+             </View>
+                 <View style={styles.formRow}>
+                        <Entypo name="key" style={styles.icon} />
+                        <TextInput
+                            placeholderTextColor={colors.principal}
+                            style={styles.input}
+                            placeholder="Senha"
+                            secureTextEntry={true}
+                            autoCapitalize="none"
+                            onChangeText={(i) => handleChange({ password: i })}
+                        />
+                    </View>
+           
             <ComponentButtonInterface tittle='Login' type='primary' onPressI={handleSingIn} />
             <ComponentButtonInterface tittle='Cadastre-se' type='secondary' onPressI={handlerRegister} />
             

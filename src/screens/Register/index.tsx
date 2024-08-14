@@ -4,7 +4,7 @@ import { MaterialIcons, Entypo, Ionicons } from "@expo/vector-icons";
 import {styles} from "./style";
 import {colors} from "../../styles/colors";
 import { LoginTypes } from '../../navigation/login.navigation';
-import { ComponentButtonInterface } from '../../components';
+import { ButtonInterface } from '../../components/ButtonInterface';
 
 export interface IRegister {
     name?: string
@@ -62,7 +62,10 @@ export function Register({ navigation }: LoginTypes) {
                     />
 
                 </View>
+                <ButtonInterface tittle='Salvar' type='secondary' onPressI={Register} />
+                <ButtonInterface tittle='Voltar' type='primary' onPressI={handleGoBack} />
+   
             </KeyboardAvoidingView>
-        </View>
+            </View>   
     );
 }
