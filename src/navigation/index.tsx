@@ -1,10 +1,19 @@
-import React from "react";
-import {NavigationContainer} from "@react-navigation/native"
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { LoginNavigation } from "./login.navigation";
-export function Navigation() {
+import { useAuth } from "../hook/auth";
+import { MenuStack } from "./Menu.Stacknavigation";
+import { ComponentLoading } from "../components"
+
+
+export function Navigation(){
+    const { user, loading } = useAuth()
+    if (loading) {
+        return <ComponentLoading />
+    }
     return(
         <NavigationContainer>
-            <LoginNavigation/>
+           {user?.token ? <MenuStack/> : <LoginNavigation/>}
         </NavigationContainer>
-    )
+    );
 }
