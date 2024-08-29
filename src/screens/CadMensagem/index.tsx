@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MessageTypes } from "../../navigation/message.navigation";
 import { ImageBackground, Alert, KeyboardAvoidingView, Text, TextInput, View } from "react-native";
-import { colors } from '../../styles/colors'
+import { stylesglobal, cores } from '../../styles/globalstyle'
 import { ComponentButtonInterface } from "../../components";
 import { IMessage } from "../../services/data/Mensagem";
 import { useAuth } from "../../hook/auth"
@@ -39,7 +39,7 @@ export function CadMensagem({ navigation }: MessageTypes) {
                 <Text style={styles.title}>Cadastrar Mensagem</Text>
                 <View style={styles.formRow}>
                     <TextInput
-                        placeholderTextColor={colors.preto}
+                        placeholderTextColor={cores.black}
                         style={styles.input}
                         placeholder="título"
                         onChangeText={(i) => handleChange({ title: i })}
@@ -47,7 +47,7 @@ export function CadMensagem({ navigation }: MessageTypes) {
                 </View>
                 <View style={styles.formRow}>
                     <TextInput
-                        placeholderTextColor={colors.preto}
+                        placeholderTextColor={cores.black}
                         style={styles.input}
                         placeholder="mensagem"
                         multiline={true}
@@ -55,9 +55,9 @@ export function CadMensagem({ navigation }: MessageTypes) {
                         onChangeText={(i) => handleChange({ message: i })}
                     />
                 </View>
-                <ComponentButtonInterface tittle='Enviar' type='primary'
+                <ComponentButtonInterface title='Enviar' type='primary'
                     onPressI={handleCadMessage} />
-                <ComponentButtonInterface tittle='Voltar' type='secondary'
+                <ComponentButtonInterface title='Voltar' type='secondary'
                     onPressI={() => navigation.navigate("Message")} />
             </KeyboardAvoidingView>
         </View>

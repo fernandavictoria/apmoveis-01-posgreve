@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { LoginNavigation } from "./login.navigation";
 import { useAuth } from "../hook/auth";
-import { MenuStack } from "./Menu.Stacknavigation";
+import { MenuTabs } from "./MenuBottomTab.navigation";
 import { ComponentLoading } from "../components"
 
 
@@ -13,7 +13,7 @@ export function Navigation(){
     }
     return(
         <NavigationContainer>
-           {user?.token ? <MenuStack/> : <LoginNavigation/>}
+           {user?.token ? <MenuTabs/> : <LoginNavigation/>}
         </NavigationContainer>
     );
 }

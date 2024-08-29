@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, ImageBackground, TouchableOpacity } from "react-native";
 import { styles } from "./styles"
 import { useAuth } from "../../hook/auth";
 import { apiMessage } from "../../services/data";
 import { IResponseMessage } from "../../services/data/Mensagem";
 import { FlatList } from "react-native-gesture-handler";
+import { stylesglobal, cores } from "../../styles/globalstyle"
 import { MessageTypes } from "../../navigation/message.navigation";
 import { colors } from "../../styles/colors";
 import { AntDesign } from "@expo/vector-icons";
@@ -26,11 +27,15 @@ export function Mensagem({ navigation }: MessageTypes) {
     }
     const renderItem = (({ item }: itemMessage) => {
         return (
-            <View>
+            <>
+            
+            <View style={styles.espaco}>
                 <Text>Nome: {item.user.name}</Text>
                 <Text>Título: {item.title}</Text>
                 <Text>Mensagem: {item.message}</Text>
             </View>
+            
+            </>
         )
     })
     return (
@@ -45,8 +50,8 @@ export function Mensagem({ navigation }: MessageTypes) {
                     )
                 }
             <TouchableOpacity
-                onPress={() => navigation.navigate("CadMessage")}>
-                <AntDesign name="pluscircle" size={48} color={colors.branco} />
+                onPress={() => navigation.navigate("CadMessage")} style={styles.tamanho}>
+                <AntDesign name="pluscircle" size={48} color={cores.black} />
             </TouchableOpacity>
             </View>
     )

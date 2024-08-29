@@ -1,22 +1,20 @@
-import { DrawerNavigationProp, createDrawerNavigator } from "@react-navigation/drawer";
-import {Slide1, Slide2} from '../screens';
-import * as React from 'react';
+import { StackNavigationProp, createStackNavigator } from "@react-navigation/stack"
+import { Mensagem, ScreenCadMensagem } from '../screens'
 
-type MenuDrawerParam = {
-    Slide1: undefined
-    Slide2: undefined
+type MessageStackParamList = {
+    Message: undefined
+    CadMessage: undefined
 }
-type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Slide1">
-export type MenuStackTypes ={
-    navigation: MenuScreenNavigation
+type MessageScreenNavigationProp = StackNavigationProp<MessageStackParamList, 'Message'>
+export type MessageTypes = {
+    navigation: MessageScreenNavigationProp
 }
-
-export function MenuDrawer(){
-    const Drawer = createDrawerNavigator<MenuDrawerParam>();
-    return(
-        <Drawer.Navigator>
-            <Drawer.Screen name="Slide1" component={Slide1} />
-            <Drawer.Screen name="Slide2" component={Slide2} />
-        </Drawer.Navigator>
+export function MessageNavigation() {
+    const Stack = createStackNavigator<MessageStackParamList>()
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false}}>
+            <Stack.Screen name='Message' component={Mensagem} />
+            <Stack.Screen name='CadMessage' component={ScreenCadMensagem} />
+        </Stack.Navigator>
     )
 }

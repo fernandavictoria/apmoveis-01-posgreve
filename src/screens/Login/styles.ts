@@ -11,7 +11,13 @@ export const styles = StyleSheet.create({
      fontSize: 30,
      fontWeight: "bold",
      textAlign: 'center',
-     color: colors.preto
+     color: colors.primary
+    },
+
+    login: {
+        fontSize: 20,
+        textAlign: "center",
+        fontWeight: "semibold"
     },
 
     formRow: {
@@ -19,12 +25,13 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         borderWidth: 0.7,
-        borderColor: colors.principal,
+        borderColor: colors.primary,
         borderRadius: 5
     },
+
     icon: {
         fontSize: 28,
-        color: colors.preto,
+        color: colors.primary,
         borderRadius: 5
     },
 
@@ -34,5 +41,9 @@ export const styles = StyleSheet.create({
         width: "70%"
     },
 
+    img: {
+        height: 100,
+        width: 100
+    }
    
 })

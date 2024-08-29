@@ -1,23 +1,23 @@
-import { TouchableOpacityProps, TouchableOpacity, Text} from "react-native";
-import {styles} from "./style"
-import * as React from 'react'
+import { TouchableOpacityProps, TouchableOpacity, Text } from 'react-native'
+import { styles } from './style';
+import React from "react";
 
 export interface IBInterface extends TouchableOpacityProps {
     onPressI: () => void
-    tittle:string
+    title: string
     type: 'primary' | 'secondary' | 'third'
 }
-export function ButtonInterface ({ onPressI, tittle, type, ...rest }: IBInterface) {
-    return(
+export function ButtonInterface({ onPressI, title, type, ...rest }: IBInterface) {
+    return (
         <TouchableOpacity style={
-            type== "primary" ? styles.buttonPrimary:
-                type== "secondary" ? styles.buttonSecondary:
-                styles.buttonThird
+            type == "primary" ? styles.buttonPrimary :
+                type == "secondary" ? styles.buttonSecondary :
+                    styles.buttonThird
         }
-        onPress={onPressI}
-        {...rest}
+            onPress={onPressI}
+            {...rest}
         >
-            <Text style={styles.text}>{tittle}</Text>
+            <Text style={styles.text}>{title}</Text>
         </TouchableOpacity>
     )
 }
