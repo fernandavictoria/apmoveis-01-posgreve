@@ -43,7 +43,7 @@ export function Login({ navigation }: LoginTypes) {
     return (
 
             <View style={styles.container}>
-                    <Image source={require('../../img/docin.png')} style={styles.img}/>
+                    <Image source={require('../../img/sushicompolvo.png')} style={styles.img}/>
                 <KeyboardAvoidingView>
                     <Text style={styles.login}>Seja bem vindo ao app!</Text>
                     <Text style={styles.login}>Faça seu login ou cadastre-se!</Text>
