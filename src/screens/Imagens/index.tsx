@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {ScrollView, View, Image} from 'react-native';
 import * as MediaLibrary from 'expo-media-library';
 import * as ImagePicker from "expo-image-picker";
-import {styles} from './styles'
+import {styles} from "./styles"
 import {ComponentAlbum, ComponentButtonInterface} from "../../components";
 export function Imagens(){
     const [albums, setAlbums] = useState<MediaLibrary.Album[] | null>(null);
